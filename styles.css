@@ -390,7 +390,7 @@ video:focus-visible {
   color: var(--white);
   font-family: var(--font-display);
   font-size: 39px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -443,8 +443,8 @@ video:focus-visible {
   margin: 0;
   font-family: var(--font-display);
   font-size: 55px;
-  font-weight: 400;
-  line-height: 1.05;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: 0;
 }
 
@@ -588,8 +588,8 @@ video:focus-visible {
   margin: 0;
   font-family: var(--font-display);
   font-size: 55px;
-  font-weight: 400;
-  line-height: 1.05;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .architecture-figure {
@@ -630,7 +630,7 @@ video:focus-visible {
   margin: 0;
   font-family: var(--font-display);
   font-size: 29px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.12;
 }
 
@@ -669,7 +669,7 @@ video:focus-visible {
   margin: 0;
   font-family: var(--font-display);
   font-size: 43px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.08;
 }
 
@@ -725,7 +725,7 @@ video:focus-visible {
   margin: 7px 0 6px;
   font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -757,7 +757,7 @@ video:focus-visible {
   margin: 12px 0 8px;
   font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -874,6 +874,7 @@ video:focus-visible {
   border-top: 1px solid var(--line);
   font-family: var(--font-display);
   font-size: 17px;
+  font-weight: 700;
   line-height: 1.25;
 }
 
@@ -981,7 +982,7 @@ video:focus-visible {
 .media-caption h3 {
   font-family: var(--font-display);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.25;
 }
 
@@ -1126,7 +1127,7 @@ video:focus-visible {
   margin: 0;
   font-family: var(--font-display);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -1234,7 +1235,7 @@ video:focus-visible {
 .ability-group strong {
   font-family: var(--font-display);
   font-size: 21px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.15;
 }
 
@@ -1367,7 +1368,7 @@ video:focus-visible {
 .stable-method strong {
   font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -1454,7 +1455,7 @@ video:focus-visible {
   color: var(--teal);
   font-family: var(--font-display);
   font-size: 35px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -1594,7 +1595,7 @@ video:focus-visible {
   margin: 12px 0 11px;
   font-family: var(--font-display);
   font-size: 34px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.08;
 }
 
