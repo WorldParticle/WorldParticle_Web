@@ -5,25 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="WorldParticle is a unified transformer for world simulation of Lagrangian particle dynamics.">
   <title>WorldParticle | Unified Particle Dynamics</title>
-  <link rel="icon" href="data:,">
+  <link rel="icon" type="image/png" href="assets/images/worldparticle-logo.png">
   <link rel="stylesheet" href="styles.css">
   <script src="assets/vendor/lucide.min.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
-    <a class="wordmark" href="#top" aria-label="WorldParticle home"><span class="wordmark-dot" aria-hidden="true"></span><span>WorldParticle</span></a>
+    <a class="wordmark" href="#top" aria-label="WorldParticle home"><img class="wordmark-logo" src="assets/images/worldparticle-logo.png" width="28" height="28" alt=""><span>WorldParticle</span></a>
     <div class="nav-links">
-      <a href="#film">Video</a><a href="#method">Method</a><a href="#worlds">Dynamics</a><a href="#generalization">Generalization</a><a href="#applications">Applications</a>
+      <a href="#method">Method</a><a href="#generalization">Generalization</a><a href="#rollout">Rollout</a><a href="#application">Application</a>
     </div>
-    <a class="nav-paper" href="https://arxiv.org/abs/2605.15305" target="_blank" rel="noreferrer"><i data-lucide="file-text"></i><span>Paper</span></a>
+    <div class="nav-actions">
+      <a class="nav-resource" href="https://arxiv.org/abs/2605.15305" target="_blank" rel="noreferrer"><i data-lucide="file-text"></i><span>Paper</span></a>
+      <a class="nav-resource" href="https://github.com/WorldParticle/WorldParticle" target="_blank" rel="noreferrer"><i data-lucide="github"></i><span>Code</span></a>
+    </div>
   </nav>
 
   <main id="top">
     <header class="hero">
       <video class="hero-video auto-video" muted loop playsinline preload="auto" aria-label="WorldParticle fluid simulation"><source src="assets/videos/hero-fluid.mp4" type="video/mp4"></video>
       <div class="hero-copy">
-        <p class="venue">SIGGRAPH ASIA 2026</p>
+        <p class="venue">SIGGRAPH Asia 2026</p>
         <h1>WorldParticle</h1>
         <p class="hero-subtitle">Unified World Simulation of Lagrangian<br class="mobile-break"> Particle Dynamics via Transformer</p>
         <div class="authors authors-full">
@@ -38,82 +41,96 @@
         <div class="hero-actions" aria-label="Project links">
           <a class="button button-primary" href="https://arxiv.org/abs/2605.15305" target="_blank" rel="noreferrer"><i data-lucide="file-text"></i><span>Paper</span></a>
           <a class="button button-secondary" href="#film"><i data-lucide="play"></i><span>Demo</span></a>
-          <span class="button button-disabled" title="Code will be released"><i data-lucide="github"></i><span>Code</span></span>
+          <a class="button button-secondary" href="https://github.com/WorldParticle/WorldParticle" target="_blank" rel="noreferrer"><i data-lucide="github"></i><span>Code</span></a>
           <span class="button button-disabled" title="Model will be released"><i data-lucide="box"></i><span>Model</span></span>
         </div>
       </div>
-      <a class="scroll-cue" href="#film" aria-label="Scroll to project video"><i data-lucide="arrow-down"></i></a>
+      <a class="scroll-cue" href="#film" aria-label="Scroll to project demo"><i data-lucide="arrow-down"></i></a>
     </header>
 
-    <div class="signal-strip" aria-label="Project highlights">
-      <div class="signal-item accent-coral"><strong>1</strong><span>shared architecture</span></div><div class="signal-item accent-mint"><strong>6</strong><span>dynamics categories</span></div><div class="signal-item accent-yellow"><strong>800</strong><span>stable rollout frames</span></div><div class="signal-item"><strong>3</strong><span>downstream applications</span></div>
+    <div class="signal-strip" aria-label="Project modules">
+      <a class="signal-item signal-method" href="#method"><strong>1</strong><span>Shared architecture</span></a>
+      <a class="signal-item signal-generalization" href="#generalization"><strong>6</strong><span>Dynamics and generalization</span></a>
+      <a class="signal-item signal-rollout" href="#rollout"><strong>800</strong><span>Stable rollout frames</span></a>
+      <a class="signal-item signal-application" href="#application"><strong>N</strong><span>Applications and extensions</span></a>
     </div>
 
     <section class="section video-section" id="film"><div class="content-width">
-      <div class="section-heading demo-heading light-heading reveal"><span class="section-index">01 / Demo</span><h2>One model.<br>Many physical worlds.</h2></div>
-      <figure class="project-video reveal"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Complete WorldParticle project demo"><source src="assets/videos/demo-web.mp4" type="video/mp4"></video></figure>
+      <h2 class="module-title demo-title">Demo</h2>
+      <figure class="project-video"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Complete WorldParticle project demo"><source src="assets/videos/demo-web.mp4" type="video/mp4"></video></figure>
     </div></section>
 
-    <section class="section method-section" id="method"><div class="content-width">
-      <div class="section-heading split-heading reveal"><span class="section-index">02 / Pipeline</span><h2>From local particles<br>to global context.</h2><p>An explicit predictor handles known external forces. A learned corrector models particle interactions with local tokenization and compact global communication.</p></div>
-      <figure class="paper-figure architecture-figure reveal"><img src="assets/images/architecture.webp" width="2400" height="1044" alt="WorldParticle prediction-correction architecture"><figcaption>WorldParticle advances particles with a physics predictor, then estimates residual position and velocity updates through a particle tokenizer, super-token encoder, and cross-attention decoder.</figcaption></figure>
+    <section class="section method-section module-method" id="method"><div class="content-width">
+      <h2 class="module-title">Pipeline</h2>
+      <figure class="paper-figure architecture-figure"><img src="assets/images/architecture.webp" width="2400" height="1044" alt="WorldParticle prediction-correction architecture"><figcaption>WorldParticle handles known external forces with an explicit predictor, then learns a corrector that estimates residual position and velocity updates through a particle tokenizer, super-token encoder, and super-token decoder.</figcaption></figure>
       <div class="chapter-pair method-chapter-pair">
-        <article class="chapter-panel reveal"><div class="chapter-panel-copy"><span class="section-index">Particle tokenizer</span><h3>Encode local interactions.</h3><p>Topology-guided, particle-particle, particle-boundary, and particle-self branches turn the current state into particle tokens.</p></div><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Particle tokenizer demo"><source src="assets/videos/web-tokenizer.mp4" type="video/mp4"></video></article>
-        <article class="chapter-panel reveal"><div class="chapter-panel-copy"><span class="section-index">Super-token encoder / decoder</span><h3>Compress globally. Decode locally.</h3><p>Hierarchical merging builds compact super tokens; particle queries then recover globally coupled, per-particle corrections.</p></div><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Super-token encoder and decoder demo"><source src="assets/videos/web-super-tokens.mp4" type="video/mp4"></video></article>
+        <article class="chapter-panel module-card"><h3 class="module-card-title">Particle Tokenizer</h3><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Particle tokenizer demo"><source src="assets/videos/web-tokenizer.mp4" type="video/mp4"></video><p class="module-card-description">The particle tokenizer encodes local topology-guided, particle-particle, and particle-boundary interactions.</p></article>
+        <article class="chapter-panel module-card"><h3 class="module-card-title">Super Token Encoder/Decoder</h3><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Super token encoder and decoder demo"><source src="assets/videos/web-super-tokens.mp4" type="video/mp4"></video><p class="module-card-description">The super-token encoder hierarchically merges particle tokens to build super tokens. The super-token decoder recovers particle-level motion through a globally coupled attention mechanism.</p></article>
       </div>
     </div></section>
 
-    <section class="section worlds-overview" id="worlds"><div class="content-width">
-      <div class="section-heading split-heading light-heading reveal"><span class="section-index">03 / Six dynamics</span><h2>Six regimes.<br>One architecture.</h2><p>The same transformer design models cloth, elastic solids, granular sand, Newtonian and non-Newtonian fluids, and molecular dynamics.</p></div>
-      <div class="dynamics-grid">
-        <figure class="video-tile video-tile-dark reveal"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Molecular mesh and particle dynamics comparison"><source src="assets/videos/six-split-molecular.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Molecular</figcaption></figure>
-        <figure class="video-tile video-tile-dark reveal"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Newtonian fluid mesh and particle dynamics comparison"><source src="assets/videos/six-split-newtonian.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Newtonian</figcaption></figure>
-        <figure class="video-tile video-tile-dark reveal"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Granular mesh and particle dynamics comparison"><source src="assets/videos/six-split-granular.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Granular</figcaption></figure>
-        <figure class="video-tile video-tile-dark reveal"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Elastic mesh and particle dynamics comparison"><source src="assets/videos/six-split-elastic.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Elastic</figcaption></figure>
-        <figure class="video-tile video-tile-dark reveal"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Cloth mesh and particle dynamics comparison"><source src="assets/videos/six-split-cloth.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Cloth</figcaption></figure>
-        <figure class="video-tile video-tile-dark reveal"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Non-Newtonian mesh and particle dynamics comparison"><source src="assets/videos/six-split-non-newtonian.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Non-Newtonian</figcaption></figure>
-      </div>
-    </div></section>
+    <div class="module-generalization" id="generalization">
+      <section class="section worlds-overview" id="worlds"><div class="content-width">
+        <div class="module-heading"><h2 class="module-title">Different Dynamics.<br>Unified Architecture.</h2></div>
+        <div class="dynamics-grid">
+          <figure class="video-tile"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Molecular mesh and particle dynamics comparison"><source src="assets/videos/six-split-molecular.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Molecular</figcaption></figure>
+          <figure class="video-tile"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Newtonian fluid mesh and particle dynamics comparison"><source src="assets/videos/six-split-newtonian.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Newtonian</figcaption></figure>
+          <figure class="video-tile"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Granular mesh and particle dynamics comparison"><source src="assets/videos/six-split-granular.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Granular</figcaption></figure>
+          <figure class="video-tile"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Elastic mesh and particle dynamics comparison"><source src="assets/videos/six-split-elastic.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Elastic</figcaption></figure>
+          <figure class="video-tile"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Cloth mesh and particle dynamics comparison"><source src="assets/videos/six-split-cloth.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Cloth</figcaption></figure>
+          <figure class="video-tile"><div class="tile-video-grid split-comparison"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Non-Newtonian mesh and particle dynamics comparison"><source src="assets/videos/six-split-non-newtonian.mp4" type="video/mp4"></video><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Non-Newtonian</figcaption></figure>
+        </div>
+        <p class="module-intro module-caption">The same transformer design models cloth, elastic solids, granular sand, Newtonian and non-Newtonian fluids, and molecular dynamics.</p>
+      </div></section>
 
-    <section class="section generalization-section" id="generalization"><div class="content-width">
-      <div class="section-heading split-heading light-heading reveal"><span class="section-index">04 / Generalization</span><h2>Beyond the<br>training distribution.</h2><p>WorldParticle transfers to unseen physical properties, boundary conditions, initial states, actuation patterns, and long-horizon rollouts.</p></div>
-      <div class="generalization-grid">
-        <div class="generalization-copy generalization-properties reveal"><h3>Unseen Physical Properties</h3><p>Unseen Young's modulus</p></div>
-        <div class="generalization-copy generalization-boundary reveal"><h3>Unseen Boundary Conditions</h3><p>Unseen obstacle positions</p></div>
-        <div class="generalization-copy generalization-initial reveal"><h3>Unseen Initial Conditions</h3><div class="initial-labels"><p>Unseen rotation</p><p>Unseen initial geometry</p></div></div>
-        <div class="generalization-video generalization-properties-video reveal"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Physical properties example one"><source src="assets/videos/gen-property-a.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Physical properties example two"><source src="assets/videos/gen-property-b.mp4" type="video/mp4"></video></div>
-        <div class="generalization-video generalization-boundary-video reveal"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Boundary conditions example one"><source src="assets/videos/gen-boundary-a.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Boundary conditions example two"><source src="assets/videos/gen-boundary-b.mp4" type="video/mp4"></video></div>
-        <div class="generalization-video generalization-rotation-video rotation-video-grid reveal"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation beer"><source src="assets/videos/gen-rotation-beer.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation boat"><source src="assets/videos/gen-rotation-boat.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation bunny"><source src="assets/videos/gen-rotation-bunny.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation cars"><source src="assets/videos/gen-rotation-cars.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation frog"><source src="assets/videos/gen-rotation-frog.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation pumpkin"><source src="assets/videos/gen-rotation-pumpkin.mp4" type="video/mp4"></video></div>
-        <div class="generalization-video generalization-geometry-video reveal"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial geometry tiger"><source src="assets/videos/gen-geometry-tiger.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial geometry boat"><source src="assets/videos/gen-geometry-boat.mp4" type="video/mp4"></video></div>
-      </div>
-      <article class="actuation-section"><div class="generalization-copy actuation-copy reveal"><h3>Unseen Actuation</h3><p>Rollout Horizon Beyond Training</p></div><div class="actuation-visual reveal"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Original Unseen Actuation segment from the WorldParticle demo"><source src="assets/videos/actuation-matrix.mp4" type="video/mp4"></video></div></article>
-      <article class="generalization-ability"><div class="feature-row-copy reveal"><span class="section-index">Generalization ability</span><h3>Transfer beyond the nearest training sequence.</h3><p>The closest training example and an unseen test sequence are compared in both mesh and particle space.</p></div><div class="ability-demo-visual reveal"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Original Generalization Ability segment from the WorldParticle demo"><source src="assets/videos/generalization-ability-demo.mp4" type="video/mp4"></video></div></article>
-      <article class="stable-world-row"><div class="feature-row-copy reveal"><span class="section-index">Build stable world</span><h3>Stable for 800 frames.</h3><p>Six methods compared across rendered surfaces and particle rollouts.</p></div><div class="stable-matrix-scroll reveal"><div class="stable-matrix" data-sync-group>
+      <section class="section generalization-section"><div class="content-width">
+        <div class="module-heading"><h2 class="module-title">Generalization</h2></div>
+        <div class="generalization-grid">
+          <div class="generalization-copy generalization-properties"><h3>Unseen Physical Properties</h3><p>Unseen Young's modulus</p></div>
+          <div class="generalization-copy generalization-boundary"><h3>Unseen Boundary Conditions</h3><p>Unseen obstacle positions</p></div>
+          <div class="generalization-copy generalization-initial"><h3>Unseen Initial Conditions</h3><div class="initial-labels"><p>Unseen rotation</p><p>Unseen initial geometry</p></div></div>
+          <div class="generalization-video generalization-properties-video"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Physical properties example one"><source src="assets/videos/gen-property-a.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Physical properties example two"><source src="assets/videos/gen-property-b.mp4" type="video/mp4"></video></div>
+          <div class="generalization-video generalization-boundary-video"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Boundary conditions example one"><source src="assets/videos/gen-boundary-a.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Boundary conditions example two"><source src="assets/videos/gen-boundary-b.mp4" type="video/mp4"></video></div>
+          <div class="generalization-video generalization-rotation-video rotation-video-grid"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation beer"><source src="assets/videos/gen-rotation-beer.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation boat"><source src="assets/videos/gen-rotation-boat.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation bunny"><source src="assets/videos/gen-rotation-bunny.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation cars"><source src="assets/videos/gen-rotation-cars.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation frog"><source src="assets/videos/gen-rotation-frog.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial rotation pumpkin"><source src="assets/videos/gen-rotation-pumpkin.mp4" type="video/mp4"></video></div>
+          <div class="generalization-video generalization-geometry-video"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial geometry tiger"><source src="assets/videos/gen-geometry-tiger.mp4" type="video/mp4"></video><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Initial geometry boat"><source src="assets/videos/gen-geometry-boat.mp4" type="video/mp4"></video></div>
+        </div>
+        <p class="module-intro module-caption">Example sequences show Newtonian fluids flowing with varying viscosity and obstacle placements in a container; cloth colliding with a sphere; granular sand collapsing with varied initial shapes and friction; non-Newtonian fluids with varying rheological properties on different slopes; and elastic solids with varying initial rotations on a fixed slope. All test sequences use unseen configurations.</p>
+        <article class="actuation-section"><div class="feature-heading"><h3>Unseen Actuation</h3></div><div class="actuation-visual"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Unseen actuation comparison"><source src="assets/videos/actuation-matrix.mp4" type="video/mp4"></video></div><p class="feature-description">Cloth-twisting sequences use actuation strengths not observed during training. WorldParticle remains stable for 250 frames, beyond the 200-frame training horizon.</p></article>
+        <article class="generalization-ability"><div class="feature-heading"><h3>Generalization Ability</h3></div><div class="ability-demo-visual"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Generalization ability comparison"><source src="assets/videos/generalization-ability-demo.mp4" type="video/mp4"></video></div><p class="feature-description">The closest training example and an unseen test sequence are compared. Orange boxes highlight differences in fluid volume and container geometry.</p></article>
+      </div></section>
+    </div>
+
+    <section class="section rollout-section module-rollout" id="rollout"><div class="content-width">
+      <div class="module-heading"><h2 class="module-title">Stable Rollout</h2></div>
+      <div class="stable-matrix-scroll"><div class="stable-matrix" data-sync-group>
         <div class="stable-method"><strong>DeepLagrangian</strong><span>Ummenhofer et al. 2020</span></div><div class="stable-method"><strong>GNS</strong><span>Sanchez-Gonzalez et al. 2020</span></div><div class="stable-method"><strong>TIE</strong><span>Shao et al. 2022</span></div><div class="stable-method"><strong>Neural Operator</strong><span>Li et al. 2021; Viswanath et al. 2024</span></div><div class="stable-method"><strong>UPT</strong><span>Alkin et al. 2024</span></div><div class="stable-method stable-method-ours"><strong>WorldParticle</strong><span>Wang, Guo, Chen et al.</span></div>
         <div class="stable-cell" data-row-label="Mesh"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="DeepLagrangian mesh rollout"><source src="assets/videos/stable-deep-mesh.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="GNS mesh rollout"><source src="assets/videos/stable-gns-mesh.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="TIE mesh rollout"><source src="assets/videos/stable-tie-mesh.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Neural Operator mesh rollout"><source src="assets/videos/stable-neural-mesh.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="UPT mesh rollout"><source src="assets/videos/stable-upt-mesh.mp4" type="video/mp4"></video></div><div class="stable-cell stable-cell-ours"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="WorldParticle mesh rollout"><source src="assets/videos/stable-ours-mesh.mp4" type="video/mp4"></video></div>
         <div class="stable-cell" data-row-label="Particles"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="DeepLagrangian particle rollout"><source src="assets/videos/stable-deep-particles.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="GNS particle rollout"><source src="assets/videos/stable-gns-particles.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="TIE particle rollout"><source src="assets/videos/stable-tie-particles.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Neural Operator particle rollout"><source src="assets/videos/stable-neural-particles.mp4" type="video/mp4"></video></div><div class="stable-cell"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="UPT particle rollout"><source src="assets/videos/stable-upt-particles.mp4" type="video/mp4"></video></div><div class="stable-cell stable-cell-ours"><video class="auto-video" muted loop controls playsinline preload="none" aria-label="WorldParticle particle rollout"><source src="assets/videos/stable-ours-particles.mp4" type="video/mp4"></video></div>
-      </div></div></article>
+      </div></div>
+      <p class="module-intro module-caption">WorldParticle remains stable for up to 800 rollout frames in the fluid experiment, while competing methods produce unstable or limited long-horizon predictions.</p>
     </div></section>
 
-    <section class="section applications-section" id="applications"><div class="content-width">
-      <div class="section-heading centered application-heading reveal"><span class="section-index">05 / Applications</span><h2>Simulate, control, optimize.</h2><p>A differentiable particle world model supports responsive interaction and trajectory-level design.</p></div>
-      <div class="chapter-pair application-pair">
-        <article class="chapter-panel reveal"><div class="chapter-panel-copy"><span class="application-number">A / 01</span><h3>Interactive control</h3><p>Apply forces to deformable objects and preview the resulting motion in real time.</p></div><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Interactive force control application"><source src="assets/videos/web-interactive-control.mp4" type="video/mp4"></video></article>
-        <article class="chapter-panel reveal"><div class="chapter-panel-copy"><span class="application-number">A / 02</span><h3>Inverse design</h3><p>Differentiate through predicted rollouts to optimize initial conditions toward a desired final state.</p></div><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Inverse design application"><source src="assets/videos/web-inverse-design.mp4" type="video/mp4"></video></article>
-      </div>
-    </div></section>
+    <div class="module-application" id="application">
+      <section class="section applications-section"><div class="content-width">
+        <h2 class="module-title">Application</h2>
+        <div class="chapter-pair application-pair">
+          <article class="chapter-panel module-card"><h3 class="module-card-title">Interactive Control</h3><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Interactive force control application"><source src="assets/videos/web-interactive-control.mp4" type="video/mp4"></video><p class="module-card-description">Apply forces to deformable objects and preview the resulting motion in real time.</p></article>
+          <article class="chapter-panel module-card"><h3 class="module-card-title">Inverse Design</h3><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Inverse design application"><source src="assets/videos/web-inverse-design.mp4" type="video/mp4"></video><p class="module-card-description">Differentiate through predicted rollouts to optimize initial conditions toward a desired final state.</p></article>
+        </div>
+      </div></section>
 
-    <section class="section frontier-section" id="frontiers"><div class="content-width">
-      <div class="section-heading split-heading reveal"><span class="section-index">06 / More possibilities</span><h2>Molecular scale.<br>Real-world data.</h2><p>The same particle formulation extends from protein motion to predictive simulators learned from captured trajectories.</p></div>
-      <div class="chapter-pair frontier-pair">
-        <article class="chapter-panel frontier-panel reveal" id="molecular"><div class="chapter-panel-copy"><span class="section-index">Build molecular world model</span><h3>From visible matter to molecular motion.</h3><p>The shared particle formulation captures atom-scale protein dynamics with the same architectural template.</p></div><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Molecular dynamics simulation"><source src="assets/videos/web-molecular.mp4" type="video/mp4"></video></article>
-        <article class="chapter-panel frontier-panel reveal" id="real-world"><div class="chapter-panel-copy"><span class="section-index">Build real-world simulators</span><h3>Learn simulators from captured motion.</h3><p>Tracked 3D particle trajectories become predictive models for cloth, toy, and rope manipulation.</p></div><video class="auto-video" muted loop controls playsinline preload="none" aria-label="WorldParticle learned from real-world manipulation data"><source src="assets/videos/web-real-world.mp4" type="video/mp4"></video></article>
-      </div>
-    </div></section>
+      <section class="section frontier-section"><div class="content-width">
+        <h2 class="module-title">More Possibilities</h2>
+        <div class="chapter-pair frontier-pair">
+          <article class="chapter-panel module-card" id="molecular"><h3 class="module-card-title">Molecular World Model</h3><video class="auto-video" muted loop controls playsinline preload="none" aria-label="Molecular dynamics simulation"><source src="assets/videos/web-molecular.mp4" type="video/mp4"></video><p class="module-card-description">WorldParticle predicts protein side-chain rotational dynamics from different initial conformations at 50 fs time steps, 100&times; larger than the 0.5 fs steps used in traditional simulations.</p></article>
+          <article class="chapter-panel module-card" id="real-world"><h3 class="module-card-title">Real-World Simulators</h3><video class="auto-video" muted loop controls playsinline preload="none" aria-label="WorldParticle learned from real-world manipulation data"><source src="assets/videos/web-real-world.mp4" type="video/mp4"></video><p class="module-card-description">WorldParticle directly learns predictive dynamics from real-world data.</p></article>
+        </div>
+      </div></section>
+    </div>
 
     <section class="section citation-section" id="citation"><div class="content-width citation-layout">
-      <div class="section-heading light-heading reveal"><span class="section-index">07 / Citation</span><h2>Build on<br>WorldParticle.</h2><div class="citation-actions"><button class="button button-light" id="copy-bibtex" type="button"><i data-lucide="copy"></i><span>Copy BibTeX</span></button><a class="button button-outline" href="https://arxiv.org/abs/2605.15305" target="_blank" rel="noreferrer"><i data-lucide="external-link"></i><span>View paper</span></a></div></div>
-      <pre id="bibtex" class="reveal"><code>@article{wang2026worldparticle,
+      <div class="section-heading"><h2>Citation</h2><div class="citation-actions"><button class="button button-light" id="copy-bibtex" type="button"><i data-lucide="copy"></i><span>Copy BibTeX</span></button><a class="button button-outline" href="https://arxiv.org/abs/2605.15305" target="_blank" rel="noreferrer"><i data-lucide="external-link"></i><span>View Paper</span></a></div></div>
+      <pre id="bibtex"><code>@article{wang2026worldparticle,
   title   = {WorldParticle: Unified World Simulation of Lagrangian Particle Dynamics via Transformer},
   author  = {Wang, Caoliwen and Guo, Minghao and Chen, Siyuan and Zhang, Heng and Wang, Mengdi and Ni, Xingyu and Sun, Hanson and Wang, Kunyi and Pan, Zherong and Wu, Kui and Liu, Lingjie and Yang, Yin and Jiang, Chenfanfu and Komura, Taku and Matusik, Wojciech and Chen, Peter Yichen},
   journal = {arXiv preprint arXiv:2605.15305},
@@ -122,6 +139,6 @@
     </div></section>
   </main>
 
-  <footer class="site-footer"><a class="wordmark footer-mark" href="#top"><span class="wordmark-dot" aria-hidden="true"></span><span>WorldParticle</span></a><p>Unified world simulation of Lagrangian particle dynamics.</p><p class="footer-credit">Project page &middot; 2026</p></footer>
+  <footer class="site-footer"><a class="wordmark footer-mark" href="#top"><img class="wordmark-logo" src="assets/images/worldparticle-logo.png" width="26" height="26" alt=""><span>WorldParticle</span></a><p>&copy; 2026 WorldParticle. All rights reserved.</p></footer>
 </body>
 </html>
