@@ -3112,19 +3112,19 @@ body {
   }
 }
 
-.module-generalization .metric-explanation {
-  color: var(--generalization-accent);
-}
-
-.module-method .metric-explanation {
+.module-method .metric-emphasis {
   color: var(--method-accent);
 }
 
-.module-rollout .metric-explanation {
+.module-generalization .metric-emphasis {
+  color: var(--generalization-accent);
+}
+
+.module-rollout .metric-emphasis {
   color: var(--rollout-accent);
 }
 
-.module-application .metric-explanation {
+.module-application .metric-emphasis {
   color: var(--application-accent);
 }
 
@@ -3142,6 +3142,27 @@ body {
   padding: 18px 22px;
   font-size: 23px;
   line-height: 1.2;
+}
+
+.worlds-overview .dynamics-grid {
+  gap: 14px;
+}
+
+.worlds-overview .video-tile figcaption {
+  padding: 10px 14px 11px;
+}
+
+.generalization-section .beyond-training-title {
+  margin-bottom: 24px;
+}
+
+.generalization-section .generalization-copy {
+  min-height: 88px;
+  padding: 12px 18px 14px;
+}
+
+.generalization-section .generalization-initial .initial-labels {
+  margin-top: 16px;
 }
 
 .generalization-section {
@@ -3189,5 +3210,18 @@ body {
     min-height: 62px;
     padding: 14px 16px;
     font-size: 23px;
+  }
+
+  .generalization-section .beyond-training-title {
+    margin-bottom: 20px;
+  }
+
+  .generalization-section .generalization-copy {
+    min-height: 0;
+    padding: 12px 14px;
+  }
+
+  .generalization-section .generalization-initial .initial-labels {
+    margin-top: 14px;
   }
 }
