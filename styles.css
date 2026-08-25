@@ -2722,6 +2722,16 @@ body {
   text-align: center;
 }
 
+.beyond-training-title {
+  margin: 0 0 38px;
+  color: var(--generalization-accent);
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
 .actuation-visual video,
 .ability-demo-visual video {
   background: var(--white);
@@ -2958,6 +2968,11 @@ body {
     font-size: 32px;
   }
 
+  .beyond-training-title {
+    margin-bottom: 30px;
+    font-size: 27px;
+  }
+
   .module-card-description {
     min-height: 0;
     font-size: 15px;
@@ -3094,5 +3109,85 @@ body {
 
   .signal-item .signal-metric > span {
     font-size: 17px;
+  }
+}
+
+.module-generalization .metric-explanation {
+  color: var(--generalization-accent);
+}
+
+.module-method .metric-explanation {
+  color: var(--method-accent);
+}
+
+.module-rollout .metric-explanation {
+  color: var(--rollout-accent);
+}
+
+.module-application .metric-explanation {
+  color: var(--application-accent);
+}
+
+.submodule-title {
+  font-size: 34px;
+}
+
+.module-application .module-card-title {
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.module-method .module-card-title {
+  min-height: 70px;
+  padding: 18px 22px;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.generalization-section {
+  padding-top: 32px;
+}
+
+.worlds-overview {
+  padding-bottom: 36px;
+}
+
+.applications-section {
+  padding-bottom: 28px;
+}
+
+.frontier-section {
+  padding-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .generalization-section {
+    padding-top: 24px;
+  }
+
+  .worlds-overview {
+    padding-bottom: 24px;
+  }
+
+  .applications-section {
+    padding-bottom: 22px;
+  }
+
+  .frontier-section {
+    padding-top: 18px;
+  }
+
+  .submodule-title {
+    font-size: 27px;
+  }
+
+  .module-application .module-card-title {
+    font-size: 23px;
+  }
+
+  .module-method .module-card-title {
+    min-height: 62px;
+    padding: 14px 16px;
+    font-size: 23px;
   }
 }
