@@ -3170,6 +3170,14 @@ body {
   place-items: start;
 }
 
+.video-section {
+  padding-bottom: 56px;
+}
+
+.abstract-section {
+  padding-top: 56px;
+}
+
 @media (min-width: 901px) and (max-width: 1120px) {
   .site-nav {
     gap: 16px;
@@ -3263,6 +3271,14 @@ body {
 
   .module-subheading .metric-explanation {
     min-height: 0;
+  }
+
+  .video-section {
+    padding-bottom: 38px;
+  }
+
+  .abstract-section {
+    padding-top: 38px;
   }
 
   .abstract-title {
