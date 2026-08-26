@@ -3128,6 +3128,61 @@ body {
   color: var(--application-accent);
 }
 
+.module-subheading .metric-explanation {
+  max-width: none;
+  min-height: 3.24em;
+  margin-right: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+.abstract-section {
+  color: var(--ink);
+  background: var(--white);
+}
+
+.abstract-title {
+  margin: 0 0 28px;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.abstract-copy,
+.module-caption,
+.module-card-description,
+.feature-description {
+  color: #465048;
+  font-size: 17px;
+  line-height: 1.62;
+  text-align: left;
+}
+
+.abstract-copy {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.module-card-description {
+  width: 100%;
+  place-items: start;
+}
+
+@media (min-width: 901px) and (max-width: 1120px) {
+  .site-nav {
+    gap: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 12px;
+  }
+}
+
 .submodule-title {
   font-size: 34px;
 }
@@ -3204,6 +3259,22 @@ body {
 
   .module-application .module-card-title {
     font-size: 23px;
+  }
+
+  .module-subheading .metric-explanation {
+    min-height: 0;
+  }
+
+  .abstract-title {
+    margin-bottom: 22px;
+    font-size: 27px;
+  }
+
+  .abstract-copy,
+  .module-caption,
+  .module-card-description,
+  .feature-description {
+    font-size: 15px;
   }
 
   .module-method .module-card-title {
