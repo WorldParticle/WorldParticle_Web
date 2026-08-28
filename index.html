@@ -14,7 +14,7 @@
   <nav class="site-nav" aria-label="Primary navigation">
     <a class="wordmark" href="#top" aria-label="WorldParticle home"><img class="wordmark-logo" src="assets/images/worldparticle-logo.png" width="28" height="28" alt=""><span>WorldParticle</span></a>
     <div class="nav-links">
-      <a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#generalization">Generalization</a><a href="#rollout">Rollout</a><a href="#application">Extension</a><a href="#citation">Citation</a>
+      <a href="#abstract"><span>Abstract</span></a><a href="#method"><span>Single</span><span>Architecture</span></a><a href="#generalization"><span>Diverse</span><span>Phenomena</span></a><a href="#rollout"><span>Long-Horizon</span><span>Rollouts</span></a><a href="#application"><span>Real-World</span><span>Applications</span></a><a href="#citation"><span>Citation</span></a>
     </div>
     <div class="nav-actions">
       <a class="nav-resource" href="https://arxiv.org/abs/2605.15305" target="_blank" rel="noreferrer"><i data-lucide="file-text"></i><span>Paper</span></a>
@@ -49,10 +49,10 @@
     </header>
 
     <div class="signal-strip" aria-label="Project modules">
-      <a class="signal-item signal-method" href="#method"><span class="signal-label">Method</span><span class="signal-metric"><strong>1</strong><span>Architecture</span></span></a>
-      <a class="signal-item signal-generalization" href="#generalization"><span class="signal-label">Generalization</span><span class="signal-metric"><strong>6</strong><span>Categories</span></span></a>
-      <a class="signal-item signal-rollout" href="#rollout"><span class="signal-label">Rollout</span><span class="signal-metric"><strong>800</strong><span>Frames</span></span></a>
-      <a class="signal-item signal-application" href="#application"><span class="signal-label">Extension</span><span class="signal-metric"><strong>N</strong><span>Applications</span></span></a>
+      <a class="signal-item signal-method" href="#method"><span class="signal-label">Single</span><span class="signal-metric"><strong>Architecture</strong></span></a>
+      <a class="signal-item signal-generalization" href="#generalization"><span class="signal-label">Diverse</span><span class="signal-metric"><strong>Phenomena</strong></span></a>
+      <a class="signal-item signal-rollout" href="#rollout"><span class="signal-label">Long-Horizon</span><span class="signal-metric"><strong>Rollouts</strong></span></a>
+      <a class="signal-item signal-application" href="#application"><span class="signal-label">Real-World</span><span class="signal-metric"><strong>Applications</strong></span></a>
     </div>
 
     <section class="section video-section" id="film"><div class="content-width">
@@ -65,7 +65,7 @@
     </div></section>
 
     <section class="section method-section module-method" id="method"><div class="content-width">
-      <div class="module-heading"><h2 class="module-title">Method</h2><div class="module-subheading"><h3>1 Architecture</h3><p class="metric-explanation">WorldParticle unifies simulation at the architecture and workflow level: we use <span class="metric-emphasis">one architecture</span>, one training recipe, and one inference codebase for all dynamics categories.</p></div></div>
+      <div class="module-heading"><h2 class="module-title"><span class="module-title-kicker">Single</span><span class="module-title-main">Architecture</span></h2><div class="module-subheading"><p class="metric-explanation">WorldParticle unifies simulation at the architecture and workflow level: we use <span class="metric-emphasis">one architecture</span>, one training recipe, and one inference codebase for all dynamics categories.</p></div></div>
       <figure class="paper-figure architecture-figure"><img src="assets/images/architecture.webp" width="2400" height="1044" alt="WorldParticle prediction-correction architecture"></figure>
       <p class="module-intro module-caption">Our framework first handles known external forces with an explicit predictor, then learns a corrector that estimates residual position and velocity updates through a particle tokenizer, a super-token encoder, and a super-token decoder.</p>
       <div class="chapter-pair method-chapter-pair">
@@ -76,7 +76,7 @@
 
     <div class="module-generalization" id="generalization">
       <section class="section worlds-overview" id="worlds"><div class="content-width">
-        <div class="module-heading"><h2 class="module-title">Generalization</h2><div class="module-subheading"><h3>6 Categories</h3><p class="metric-explanation">WorldParticle has been extensively validated across <span class="metric-emphasis">six dynamics</span>, from microscopic protein motion to macroscopic physical simulations.</p></div></div>
+        <div class="module-heading"><h2 class="module-title"><span class="module-title-kicker">Diverse</span><span class="module-title-main">Phenomena</span></h2><div class="module-subheading"><p class="metric-explanation">WorldParticle has been extensively validated across <span class="metric-emphasis">six dynamics</span>, from microscopic protein motion to macroscopic physical simulations.</p></div></div>
         <div class="dynamics-grid">
           <figure class="video-tile"><div class="tile-video-grid split-comparison"><img class="auto-gif" src="assets/videos/six-split-molecular.gif" alt="Molecular mesh and particle dynamics comparison"><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Molecular</figcaption></figure>
           <figure class="video-tile"><div class="tile-video-grid split-comparison"><img class="auto-gif" src="assets/videos/six-split-elastic.gif" alt="Elastic solids mesh and particle dynamics comparison"><div class="split-panel-labels" aria-hidden="true"><span>Mesh</span><span>Particles</span></div></div><figcaption>Elastic Solids</figcaption></figure>
@@ -107,7 +107,7 @@
     </div>
 
     <section class="section rollout-section module-rollout" id="rollout"><div class="content-width">
-      <div class="module-heading"><h2 class="module-title">Rollout</h2><div class="module-subheading"><h3>800 Frames</h3><p class="metric-explanation">WorldParticle remains stable for up to <span class="metric-emphasis">eight hundred frames</span> in the fluid experiment, demonstrating better performance and stability than other neural simulators.</p></div></div>
+      <div class="module-heading"><h2 class="module-title"><span class="module-title-kicker">Long-Horizon</span><span class="module-title-main">Rollouts</span></h2><div class="module-subheading"><p class="metric-explanation">WorldParticle remains stable for up to <span class="metric-emphasis">eight hundred frames</span> in the fluid experiment, demonstrating better performance and stability than other neural simulators.</p></div></div>
       <div class="stable-matrix-scroll"><div class="stable-matrix" data-sync-group>
         <div class="stable-method"><strong>DeepLagrangian</strong><span>Ummenhofer et al. 2020</span></div><div class="stable-method"><strong>GNS</strong><span>Sanchez-Gonzalez et al. 2020</span></div><div class="stable-method"><strong>TIE</strong><span>Shao et al. 2022</span></div><div class="stable-method"><strong>Neural Operator</strong><span>Li et al. 2021; Viswanath et al. 2024</span></div><div class="stable-method"><strong>UPT</strong><span>Alkin et al. 2024</span></div><div class="stable-method stable-method-ours"><strong>WorldParticle</strong><span>Wang et al. 2026</span></div>
         <div class="stable-cell" data-row-label="Mesh"><img class="auto-gif" src="assets/videos/stable-deep-mesh.gif" alt="DeepLagrangian mesh rollout"></div><div class="stable-cell"><img class="auto-gif" src="assets/videos/stable-gns-mesh.gif" alt="GNS mesh rollout"></div><div class="stable-cell"><img class="auto-gif" src="assets/videos/stable-tie-mesh.gif" alt="TIE mesh rollout"></div><div class="stable-cell"><img class="auto-gif" src="assets/videos/stable-neural-mesh.gif" alt="Neural Operator mesh rollout"></div><div class="stable-cell"><img class="auto-gif" src="assets/videos/stable-upt-mesh.gif" alt="UPT mesh rollout"></div><div class="stable-cell stable-cell-ours"><img class="auto-gif" src="assets/videos/stable-ours-mesh.gif" alt="WorldParticle mesh rollout"></div>
@@ -117,7 +117,7 @@
 
     <div class="module-application" id="application">
       <section class="section applications-section"><div class="content-width">
-        <div class="module-heading"><h2 class="module-title">Extension</h2><div class="module-subheading"><h3>N Applications</h3><p class="metric-explanation">WorldParticle is expected to unlock <span class="metric-emphasis">several applications</span> across a broad frontier yet to be explored. We demonstrate interactive control and inverse design, while unlocking new capabilities through molecular world models and real-world simulators.</p></div></div>
+        <div class="module-heading"><h2 class="module-title"><span class="module-title-kicker">Real-World</span><span class="module-title-main">Applications</span></h2><div class="module-subheading"><p class="metric-explanation">WorldParticle is expected to unlock <span class="metric-emphasis">several applications</span> across a broad frontier yet to be explored. We demonstrate interactive control and inverse design, while unlocking new capabilities through molecular world models and real-world simulators.</p></div></div>
         <div class="chapter-pair application-pair">
           <article class="chapter-panel module-card"><h3 class="module-card-title">Interactive Control</h3><img class="auto-gif" src="assets/videos/web-interactive-control.gif" alt="Interactive force control application"><p class="module-card-description">Our framework generalizes to unseen force configurations because the prediction step explicitly integrates external forces, while fast inference enables interactive applications.</p></article>
           <article class="chapter-panel module-card"><h3 class="module-card-title">Inverse Design</h3><img class="auto-gif" src="assets/videos/web-inverse-design.gif" alt="Inverse design application"><p class="module-card-description">Our framework enables inverse optimization because gradients can be backpropagated through autoregressive neural rollouts.</p></article>

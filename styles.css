@@ -3136,6 +3136,63 @@ body {
   text-align: left;
 }
 
+.nav-links {
+  gap: 36px;
+  white-space: nowrap;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.module-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.module-title-kicker {
+  font-size: 0.52em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.module-title-main {
+  font-size: 1em;
+  line-height: 1;
+}
+
+.signal-item .signal-label {
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.signal-item .signal-metric {
+  display: block;
+  font-size: 0;
+  line-height: 1;
+}
+
+.signal-item .signal-metric strong {
+  font-size: 36px;
+  line-height: 1.05;
+}
+
+.signal-item .signal-metric > span {
+  display: none;
+}
+
+@media (min-width: 901px) and (max-width: 1120px) {
+  .nav-links {
+    gap: 18px;
+    font-size: 12px;
+  }
+}
+
 .abstract-section {
   color: var(--ink);
   background: var(--white);
@@ -3271,6 +3328,18 @@ body {
 
   .module-subheading .metric-explanation {
     min-height: 0;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .signal-item .signal-label {
+    font-size: 15px;
+  }
+
+  .signal-item .signal-metric strong {
+    font-size: 30px;
   }
 
   .video-section {
